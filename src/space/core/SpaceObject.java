@@ -8,6 +8,7 @@ import interfaces.ClickableObject;
 import interfaces.logical.CollidingObject;
 import interfaces.logical.UpdatingObject;
 import javafx.scene.canvas.GraphicsContext;
+import space.builder.SpaceObjectBuilder;
 
 @SuppressWarnings("restriction")
 public abstract class SpaceObject implements UpdatingObject, ClickableObject, CollidingObject{
@@ -18,13 +19,18 @@ public abstract class SpaceObject implements UpdatingObject, ClickableObject, Co
 	public List<MovingSpaceObject> trabants=new LinkedList<MovingSpaceObject>();
 	protected float rotation = 0; //in radiant-degree
 	
-	public SpaceObject(String name,Point center, BaseArea area) {
+	protected SpaceObject(String name,Point center, BaseArea area) {
 		this.name=name;
 		this.center=center;
 		this.area=area;
 		area.center=center;
 	}
-	
+	/*public SpaceObject(SpaceObjectBuilder sob) {
+		name=sob.name;
+		center=sob.center;
+		area=sob.area;
+	}
+	*/
 	public void update() {
 		for (MovingSpaceObject trabant : trabants){
 			trabant.move(center);

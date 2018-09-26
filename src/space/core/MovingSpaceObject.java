@@ -37,6 +37,7 @@ public abstract class MovingSpaceObject extends SpaceObject implements MovingObj
 		center.move(0, distance);;
 	}
 	
+	
 	public void move(Point parentCenter) {
 		moveRelativePos();
 		center.x= parentCenter.x+(int)(Math.cos(relativePos)*distance);

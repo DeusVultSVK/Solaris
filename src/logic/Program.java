@@ -57,7 +57,7 @@ public class Program extends Application{
 		Planet moon = new Planet("Moon", earth, Color.LIGHTGRAY,5,30,Math.PI/800);
 		
 		Planet saturn = (new Planet.Builder("Saturn", sun))
-							.size(20)
+							.radious(20)
 							.color(Color.LIGHTGOLDENRODYELLOW)
 							.speed(Math.PI/4000)
 							.distance(480)
